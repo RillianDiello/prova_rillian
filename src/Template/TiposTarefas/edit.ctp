@@ -1,0 +1,36 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ */
+?>
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
+    <ul class="side-nav">
+        <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Form->postLink(
+                __('Delete'),
+                ['action' => 'delete', $tiposTarefa->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $tiposTarefa->id)]
+            )
+        ?></li>
+        <li><?= $this->Html->link(__('Listar Tipos Tarefas'), ['action' => 'index']) ?></li>
+    </ul>
+</nav>
+<div class="tiposTarefas form large-9 medium-8 columns content">
+    <?= $this->Form->create($tiposTarefa) ?>
+    <fieldset>
+        <legend><?= __('Edit Tipos Tarefa') ?></legend>
+        <div class="form-group">
+
+            <div class="col-lg-10">
+            <?php echo $this->Form->control('nome', ['class' =>'form-control', 'Placeholder' => 'Nome']);?>
+            </div>
+        </div>
+       <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <?= $this->Form->button(__('Salvar'),['class' => 'btn btn-sucess']) ;?>
+        <?= $this->html->link('Voltar', ['action' => 'index'],['class' => 'btn btn-primary']); ?>
+      </div>
+    </fieldset>
+   
+    <?= $this->Form->end() ?>
+</div>
